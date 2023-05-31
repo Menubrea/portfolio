@@ -1,10 +1,19 @@
-<script lang='ts'>
-	// The ordering of these imports is critical to your app working properly
-	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
-	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
+<script lang="ts">
+	import { AppShell } from '@skeletonlabs/skeleton';
+	import { Navbar } from '../components/ui';
+
+	// Your custom Skeleton theme:
+	import '../theme.postcss';
+
+	// This contains the bulk of Skeletons required styles:
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
-	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
 </script>
 
-<slot />
+<AppShell>
+	<svelte:fragment slot="header">
+		<Navbar />
+	</svelte:fragment>
+
+	<slot />
+</AppShell>
