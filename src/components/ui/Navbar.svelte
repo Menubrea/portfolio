@@ -1,16 +1,22 @@
 <script lang="ts">
 	import { AppBar } from '@skeletonlabs/skeleton';
-	import { Button } from './';
-	import logo from '../../assets/logo-dark.svg';
-	import mobileLogo from '../../assets/short-logo.svg';
+	import { Anchor } from '.';
+	import logo from '../../assets/logo-light.svg';
+	import mobileLogo from '../../assets/logo-dark-mob.svg';
 </script>
 
-<AppBar>
+<AppBar background="none" padding="p-4">
 	<svelte:fragment slot="lead">
 		<img class="w-20 sm:hidden" src={mobileLogo} alt="website logo" />
-		<img class="w-48 hidden sm:block" src={logo} alt="website logo" />
+		<a href="/">
+			<img class="w-32 hidden sm:block" src={logo} alt="website logo" />
+		</a>
 	</svelte:fragment>
 	<svelte:fragment slot="trail">
-		<Button>Github</Button>
+		<nav class="flex gap-2">
+			<Anchor href="/projects">Projects</Anchor>
+			<Anchor href="/contact">Contact</Anchor>
+			<Anchor href="/about">About</Anchor>
+		</nav>
 	</svelte:fragment>
 </AppBar>
