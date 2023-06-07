@@ -2,21 +2,34 @@
 	import { AppBar } from '@skeletonlabs/skeleton';
 	import { Anchor } from '.';
 	import logo from '../../assets/logo-light.svg';
-	import mobileLogo from '../../assets/logo-dark-mob.svg';
+	import ButtonNav from './ButtonNav.svelte';
 </script>
 
-<AppBar background="none" padding="p-4">
-	<svelte:fragment slot="lead">
-		<img class="w-20 sm:hidden" src={mobileLogo} alt="website logo" />
-		<a href="/">
-			<img class="w-32 hidden sm:block" src={logo} alt="website logo" />
-		</a>
-	</svelte:fragment>
-	<svelte:fragment slot="trail">
-		<nav class="flex gap-2">
-			<Anchor href="/projects">Projects</Anchor>
-			<Anchor href="/contact">Contact</Anchor>
-			<Anchor href="/about">About</Anchor>
-		</nav>
-	</svelte:fragment>
-</AppBar>
+<header class="flex flex-col justify-between p-2 items-center">
+	<a href="/">
+		<img class="w-32" src={logo} alt="website logo" />
+	</a>
+	<div class="mt-2">
+		<ButtonNav />
+	</div>
+</header>
+
+<style>
+	header {
+		background-color: transparent;
+		box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+		animation: slideIn 1s ease-in-out;
+	}
+
+	@keyframes slideIn {
+		from {
+			transform: translateY(-100%);
+			opacity: 0;
+		}
+
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+</style>

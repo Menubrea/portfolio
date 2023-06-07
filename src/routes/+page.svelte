@@ -1,9 +1,9 @@
 <script>
-	import { Sky } from '../components/enhancers';
 	import { ButtonNav } from '../components/ui';
+	import { Sky } from '../components/enhancers';
 </script>
 
-<div class=" flex justify-center items-center h-full relative overflow-hidden">
+<div class="flex h-full items-center justify-center relative overflow-hidden">
 	<Sky />
 	<div class="p-2 welcomeMessage">
 		<p class="h1">Hello</p>
@@ -11,20 +11,20 @@
 		<blockquote class="blockquote">
 			Frontend Developer, UI/UX Designer, and aspiring Fullstack Developer.
 		</blockquote>
-		<ButtonNav />
+		<div class="mt-5">
+			<ButtonNav />
+		</div>
 	</div>
 </div>
 
 <style>
 	.welcomeMessage {
 		overflow: hidden;
-		--width: 2em;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-
-		backdrop-filter: blur(10px);
+		z-index: 1;
 	}
 
 	h1 {
