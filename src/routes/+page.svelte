@@ -6,8 +6,8 @@
 <div class="flex h-full items-center justify-center relative overflow-hidden">
 	<Sky />
 	<div class="p-2 welcomeMessage">
-		<p class="h1">Hello</p>
-		<h1 class="h3">I am Truls Haakenstad | Menubrea</h1>
+		<!-- <p class="h1">Hello</p> -->
+		<h1 class="h1">Truls Haakenstad | Menubrea</h1>
 		<blockquote class="blockquote">
 			Frontend Developer, UI/UX Designer, and aspiring Fullstack Developer.
 		</blockquote>
@@ -25,10 +25,6 @@
 		justify-content: center;
 		align-items: center;
 		z-index: 1;
-	}
-
-	h1 {
-		font-family: 'source-sans-pro', sans-serif;
 	}
 
 	.welcomeMessage > p {
