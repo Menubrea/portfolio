@@ -8,8 +8,8 @@ const config = {
 	prerender: {
 		crawl: true,
 		enabled: true,
-		force: true,
-		pages: ['*']
+		onError: 'continue',
+		entries: ['*']
 	},
 
 	vitePlugin: {
