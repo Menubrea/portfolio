@@ -7,6 +7,8 @@
 
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.postcss';
+
+	export const prerender = true;
 </script>
 
 <AppShell>
