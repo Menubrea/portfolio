@@ -4,11 +4,8 @@
 	import { page } from '$app/stores';
 
 	import '../theme.postcss';
-
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.postcss';
-
-	export const prerender = true;
 </script>
 
 <AppShell>

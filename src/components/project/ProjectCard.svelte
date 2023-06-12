@@ -28,10 +28,6 @@
 </article>
 
 <style>
-	.blockquote {
-		border-color: rgb(255, 255, 255);
-	}
-
 	.badge {
 		font-size: 0.7rem;
 	}
