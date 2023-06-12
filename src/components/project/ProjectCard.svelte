@@ -4,31 +4,30 @@
 	export let project: Project;
 </script>
 
-<article class="relative py-2 pb-4">
+<article class="relative py-2 pb-4 card">
 	<div class="flex gap-1 justify-center mb-1">
 		{#each project.tech as tech}
 			<span class="badge variant-ghost-surface">{tech}</span>
 		{/each}
 	</div>
-	<img src={project.image} alt={`${project.name} image`} />
+	<div class="flex">
+		<img class="basis-1/2" src={project.images[0]} alt={`${project.name} image`} />
+	</div>
 
-	<section class="card-content">
-		<h2 class="my-1 w-fit px-5 mx-auto h5">
+	<section class="card-content p-4">
+		<h2 class=" w-fit mx-auto h5 mb-2">
 			{project.name}
 		</h2>
-		<strong class="blockquote">{project.shortDescription}</strong>
-		<p class="blockquote">{project.description}</p>
+		<strong>{project.shortDescription}</strong>
+		<p>{project.description}</p>
 	</section>
 	<footer class="mt-3 mx-auto w-fit">
-		<Button>View Site</Button>
-		<Button>View Code</Button>
+		<a target="_blank" href={project.url}><Button>View Site</Button></a>
+		<a target="_blank" href={project.github}><Button>View Code</Button></a>
 	</footer>
 </article>
 
 <style>
-	:root {
-		--x-length: 20%;
-	}
 	.blockquote {
 		border-color: rgb(255, 255, 255);
 	}
@@ -38,31 +37,27 @@
 	}
 
 	article {
-		transform: translateY(var(--x-length));
-		animation: move 0.5s ease-in-out;
+		border-radius: 0.2em;
+		animation: fade 1s ease-in-out;
+		opacity: 0;
 		animation-fill-mode: forwards;
-		box-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.22);
-		border-radius: 0.5em;
-	}
-
-	article:hover {
-		box-shadow: 0 0 10px 0.5px rgba(0, 0, 0, 0.172);
+		box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
 	}
 
 	article:nth-child(2) {
-		animation-delay: 0.2s;
+		animation-delay: 0.3s;
 	}
 
-	article:nth-child(1) {
-		animation-delay: 0.4s;
+	article:nth-child(3) {
+		animation-delay: 0.6s;
 	}
 
-	@keyframes move {
-		0% {
-			transform: translateY(var(--x-length));
+	@keyframes fade {
+		from {
+			opacity: 0;
 		}
-		100% {
-			transform: translateX(0);
+		to {
+			opacity: 1;
 		}
 	}
 </style>

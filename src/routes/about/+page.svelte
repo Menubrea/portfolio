@@ -1,15 +1,23 @@
-<script>
-	import { Button } from '../../components/ui';
+<script lang="ts">
+	import { Development, Profile } from '../../components/about';
 </script>
 
-<div class="flex h-full items-center justify-center relative overflow-hidden">
-	<section class="container max-w-xl">
-		<div>
-			<h1 class="h3">Truls Haakenstad</h1>
-			<blockquote class="blockquote">
-				Newly graduated Front-end developer with a passion for learning, aesthetically pleasing
-				design, clean code, great user solutions and a great cup of coffee.
-			</blockquote>
-		</div>
-	</section>
+<div class="flex flex-col h-full items-center justify-center relative overflow-hidden">
+	<Profile />
+	<Development />
 </div>
+
+<style>
+	div {
+		animation: fadeIn 1s ease-in-out;
+	}
+
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+</style>

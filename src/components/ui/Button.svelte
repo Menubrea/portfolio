@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-sm variant-filled-surface">
+<button type="button" class="btn btn-sm bg-gradient-to-br variant-gradient-primary-secondary">
 	<slot />
 </button>
 

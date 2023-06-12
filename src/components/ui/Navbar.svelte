@@ -18,18 +18,5 @@
 	header {
 		background-color: transparent;
 		box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
-		animation: slideIn 1s ease-in-out;
-	}
-
-	@keyframes slideIn {
-		from {
-			transform: translateY(-100%);
-			opacity: 0;
-		}
-
-		to {
-			transform: translateY(0);
-			opacity: 1;
-		}
 	}
 </style>
