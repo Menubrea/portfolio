@@ -5,12 +5,6 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
-	prerender: {
-		crawl: true,
-		enabled: true,
-		onError: 'continue',
-		entries: ['*']
-	},
 
 	vitePlugin: {
 		inspector: true
