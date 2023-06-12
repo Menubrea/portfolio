@@ -1,11 +1,10 @@
 <svelte:head>
 	<title>Contact</title>
 	<meta name="description" content="Contact me" />
-	<form name="contactMe" hidden method="POST" data-netlify="true">
-		<input type="email" name="email" />
-		<input type="text" name="subject" />
-		<textarea name="message" />
-	</form>
+	<meta
+		name="keywords"
+		content="contact, email, message, Contact Truls Haakenstad, Contact Menubrea, Menubrea.dev"
+	/>
 </svelte:head>
 
 <div class="h-full flex items-center justify-center">
