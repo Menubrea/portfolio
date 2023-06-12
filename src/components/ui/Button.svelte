@@ -1,4 +1,8 @@
-<button type="button" class="btn btn-sm bg-gradient-to-br variant-gradient-primary-secondary">
+<script lang="ts">
+	export let type: 'button' | 'submit' | 'reset' = 'button';
+</script>
+
+<button {type} class="btn btn-sm bg-gradient-to-br variant-gradient-primary-secondary">
 	<slot />
 </button>
 
