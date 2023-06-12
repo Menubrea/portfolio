@@ -1,7 +1,3 @@
-<script context="module">
-	export const prerender = true;
-</script>
-
 <div class="h-full flex items-center justify-center">
 	<form
 		class="card p-5 rounded"
