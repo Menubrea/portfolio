@@ -1,5 +1,5 @@
-<script>
-	import { Button } from '../../components/ui';
+<script context="module">
+	export const prerender = true;
 </script>
 
 <div class="h-full flex items-center justify-center">
