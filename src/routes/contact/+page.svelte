@@ -3,13 +3,13 @@
 </script>
 
 <div class="h-full flex items-center justify-center">
-	<form class="card p-5 rounded" name="contact" method="POST" data-netlify="true" action="/success">
+	<form class="card p-5 rounded" name="contact" method="POST" data-netlify="true">
 		<h1 class="h2 text-center my-5">Contact</h1>
 		<input type="hidden" name="form-name" value="contact" />
 		<div class="flex gap-1">
 			<label class="label">
-				<span>Name</span>
-				<input class="input" type="text" name="name" placeholder="Your name" />
+				<span>Email</span>
+				<input class="input" type="email" name="email" placeholder="Your email" />
 			</label>
 			<label class="label">
 				<span>Subject</span>
