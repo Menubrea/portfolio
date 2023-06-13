@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { AppBar } from '@skeletonlabs/skeleton';
-	import { Anchor } from '.';
 	import logo from '../../assets/logo-light.svg';
 	import ButtonNav from './ButtonNav.svelte';
 </script>
