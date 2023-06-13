@@ -1,21 +1,30 @@
 <script>
-	import { ButtonNav } from '../components/ui';
+	import { ButtonAlt } from '../components/ui';
 </script>
+
+<svelte:head>
+	<title>Truls Haakenstad | Menubrea</title>
+	<meta name="description" content="Truls Haakenstad's portfolio / personal website" />
+	<meta
+		name="keywords"
+		content="Truls Haakenstad, Menubrea, Menubrea.dev, Menubrea's portfolio, Menubrea's personal website"
+	/>
+</svelte:head>
 
 <div class="flex h-full items-center justify-center relative overflow-hidden">
 	<div class="p-2 welcomeMessage">
-		<h1 class="h1">
+		<h1 class="md:h1 h3">
 			Truls Haakenstad | <span
-				class="bg-gradient-to-br from-emerald-500 to-violet-500 bg-clip-text text-transparent box-decoration-clone"
+				class="bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
 				><i class="fa fa-github" aria-hidden="true" />
 				Menubrea</span
 			>
 		</h1>
-		<p class="text-2xl mt-2">
+		<p class="text-md md:text-2xl mt-2 text-center">
 			Frontend Developer, UI/UX Designer, and aspiring Fullstack Developer.
 		</p>
-		<div class="mt-5">
-			<ButtonNav />
+		<div class="mt-5 pt-5">
+			<a tabindex="-1" href="/projects"><ButtonAlt>Projects</ButtonAlt></a>
 		</div>
 	</div>
 </div>

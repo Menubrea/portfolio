@@ -9,7 +9,7 @@
 
 <style>
 	div {
-		animation: fadeIn 1s ease-in-out;
+		animation: fadeIn 0.6s ease-in-out;
 	}
 
 	@keyframes fadeIn {

@@ -1,5 +1,7 @@
 <script>
-	import { Button } from '../../components/ui';
+	// @ts-nocheck
+
+	import { ButtonAlt } from '../../components/ui';
 </script>
 
 <svelte:head>
@@ -17,13 +19,23 @@
 		name="contactMe"
 		method="POST"
 		data-netlify="true"
+		netlify-honeypot="bot-field"
 		action="/success"
 	>
 		<input type="hidden" name="form-name" value="contactMe" />
-		<h1 class="h2 text-center mb-2">Contact</h1>
-		<p class="mb-4 text-center variant-ghost-tertiary p-3 rounded">
-			Leave me a message and I'll get back to you as soon as possible. It's important you provide a
-			valid email, as I'll use that to contact you back.
+		<h1
+			class="h2 text-center mb-2 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
+		>
+			Contact
+		</h1>
+		<p class="mb-4 text-center p-3 rounded">
+			Send me a message and I'll get back to you as soon as possible. It's important you add a valid
+			email to reach you, as I will use that to contact you back.
+		</p>
+		<p class="hidden">
+			<label>
+				Don’t fill this out if you’re human: <input name="bot-field" />
+			</label>
 		</p>
 		<div class="flex gap-1">
 			<label class="label">
@@ -38,14 +50,15 @@
 				/>
 			</label>
 			<label class="label">
-				<span>Subject</span>
+				<span>Name</span>
 				<input
 					class="input"
-					name="subject"
+					name="name"
 					required
-					title="What is your inquiry?"
+					minlength="1"
+					title="Please provide a name"
 					type="text"
-					placeholder="Subject"
+					placeholder="Your name"
 				/>
 			</label>
 		</div>
@@ -55,31 +68,38 @@
 				class="textarea"
 				name="message"
 				title="The content of your message"
+				minlength="1"
 				required
 				rows="4"
 				placeholder="Your message.."
 			/>
 		</label>
 		<div class="mx-auto w-fit mt-5">
-			<Button type="submit">Send</Button>
+			<ButtonAlt type="submit">Send</ButtonAlt>
 		</div>
 	</form>
 </div>
 
 <style>
 	form {
-		box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
-		background-image: linear-gradient(
-			90deg,
-			rgba(255, 255, 255, 0.1) 0%,
-			rgba(255, 255, 255, 0.1) 50%,
-			rgba(255, 255, 255, 0.05) 50%,
-			rgba(255, 255, 255, 0.05) 100%
-		);
+		background: linear-gradient(90deg, rgb(255, 243, 243) 0%, rgb(255, 253, 251));
+		box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+		animation: fade 1s ease-in-out;
+		opacity: 0;
+		animation-fill-mode: forwards;
 	}
 
 	input,
 	textarea {
 		border: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	@keyframes fade {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
 </style>

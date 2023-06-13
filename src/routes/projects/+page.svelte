@@ -3,8 +3,22 @@
 	import { projects } from '../../constants/projects';
 </script>
 
+<svelte:head>
+	<title>Projects</title>
+	<meta name="description" content="My projects" />
+	<meta
+		name="keywords"
+		content="projects, projects by Truls Haakenstad, projects by Menubrea, Menubrea.dev"
+	/>
+	<meta property="og:title" content="Projects" />
+</svelte:head>
+
 <div class="h-full p-2 flex flex-col justify-center items-center overflow-hidden sm:m-2 md:mt-0">
-	<h1 class="h2 mb-2">Projects</h1>
+	<h1
+		class="h2 md:pb-5 mb-5 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
+	>
+		Projects
+	</h1>
 	<section>
 		{#each projects as project}
 			<ProjectCard {project} />
@@ -35,6 +49,12 @@
 		}
 		100% {
 			opacity: 1;
+		}
+	}
+
+	@media (max-width: 600px) {
+		section {
+			gap: 2rem;
 		}
 	}
 </style>
