@@ -8,11 +8,16 @@
 	<h2 class="h4">Interested in</h2>
 	<ul class="flex flex-wrap gap-1">
 		{#each myInterests as obj}
-			<li
-				class="badge variant-ghost-primary bg-gradient-to-br from-gray-600 to-zinc-800 bg-clip-text text-transparent box-decoration-clone"
-			>
+			<li class="badge">
 				{obj.interest}
 			</li>
 		{/each}
 	</ul>
 </div>
+
+<style>
+	li {
+		background: linear-gradient(90deg, rgba(255, 239, 239, 0.4) 0%, rgba(254, 236, 218, 0.4));
+		font-weight: 500;
+	}
+</style>

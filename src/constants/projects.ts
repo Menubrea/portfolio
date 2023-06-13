@@ -23,33 +23,45 @@ export const projects: Project[] = [
 		name: 'Holidaze | Project Exam 2',
 		shortDescription: 'An airbnb-like website ',
 		description:
-			'An airbnb-like website built with React and @Mui Joy UI. More information about the project can be found in the project README.md file. The frontend is deployed on Netlify.',
+			'An air-bnb type website, built with React and Material UI. It was my final exam at Noroff, testing everything we have learned about coding, UI and UX design and managing our project. The brief and more information can be found in the github repository README file.',
 		images: [holiFront, holiVenue],
 		url: 'https://charming-tulumba-3edec4.netlify.app/',
 		github: 'https://github.com/Menubrea/project-exam-2',
-		tech: ['React', 'Mui', 'Netlify', 'Vite', 'JavaScript', 'XD'],
-		grade: 'Unknown'
+		tech: [
+			'devicon-react-original',
+			'devicon-materialui-plain',
+			'devicon-sass-original',
+			'devicon-javascript-plain',
+			'devicon-xd-plain'
+		],
+		grade: 'A'
 	},
 	{
 		name: 'Vender | Semester Project 2',
 		shortDescription: 'an auction website',
 		description:
-			'A dummy auction website built with vanilla JS and Tailwind. More information about the project can be found in the project README.md file. The frontend is deployed on GitHub Pages.',
+			'An auction website built with Tailwind CSS and vanilla JavaScript. It is a school project testing our ability to fulfil user stories from a front-end perspective, resolving CRUD operations and authentication. More information can be found in the github repository README file.',
 		images: [venderProduct, venderFront],
 		url: 'https://menubrea.github.io/Semester_Project_2/',
-		github: '',
-		tech: ['JavaScript', 'Tailwind', 'gh-pages', 'XD'],
+		github: 'https://github.com/Menubrea/Semester_Project_2',
+		tech: ['devicon-tailwindcss-plain', 'devicon-javascript-plain', 'devicon-xd-plain'],
 		grade: 'A'
 	},
 	{
 		name: 'Re:mote | JavaScript Frameworks',
 		shortDescription: 'An E-commerce website',
 		description:
-			'A dummy e-commerce website built with React and @Mui Material UI. More information about the project can be found in the project README.md file. The frontend is deployed on Netlify.',
+			'My first project built using React and Material UI, designed using XD. It is a basic e-commerce store testing our ability to fulfil user stories from a front-end perspective related to e-commerce. More information can be found in the github repository README file.',
 		images: [remoteProduct, remoteCart],
 		url: 'https://snazzy-blini-5e3607.netlify.app/',
-		github: '',
-		tech: ['React', 'Mui', 'Netlify', 'JavaScript'],
+		github: 'https://github.com/Menubrea/online-shop',
+		tech: [
+			'devicon-react-original',
+			'devicon-materialui-plain',
+			'devicon-sass-original',
+			'devicon-javascript-plain',
+			'devicon-xd-plain'
+		],
 		grade: 'A'
 	}
 ];

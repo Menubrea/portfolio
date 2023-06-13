@@ -15,7 +15,7 @@
 		{#each devProcess as process}
 			<div class="p-5 w-full grow basis-1/4 devProcess">
 				<h3
-					class="h4 bg-gradient-to-br from-emerald-500 to-violet-500 bg-clip-text text-transparent box-decoration-clone"
+					class="h4 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
 				>
 					<span aria-hidden="true" class="mr-2">0{process.id.toString()}</span>
 					<span><i aria-hidden="true" class={process.icon} /></span>

@@ -13,6 +13,10 @@ export const technologiesData: technologies[] = [
 		icon: 'fab fa-css3-alt'
 	},
 	{
+		tech: 'Sass',
+		icon: 'devicon-sass-original'
+	},
+	{
 		tech: 'JavaScript',
 		icon: 'fab fa-js'
 	},
@@ -33,12 +37,8 @@ export const technologiesData: technologies[] = [
 		icon: 'fab fa-node'
 	},
 	{
-		tech: 'Express',
-		icon: 'fas fa-server'
-	},
-	{
 		tech: 'Tailwind CSS',
-		icon: 'fas fa-paint-brush'
+		icon: 'devicon-tailwindcss-plain'
 	},
 	{
 		tech: 'Bootstrap',
@@ -46,14 +46,6 @@ export const technologiesData: technologies[] = [
 	},
 	{
 		tech: 'Material UI',
-		icon: 'fas fa-paint-brush'
-	},
-	{
-		tech: 'Prisma',
-		icon: 'fas fa-database'
-	},
-	{
-		tech: 'tRPC',
-		icon: 'fas fa-server'
+		icon: 'devicon-materialui-plain'
 	}
 ];

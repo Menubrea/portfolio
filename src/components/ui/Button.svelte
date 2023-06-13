@@ -1,14 +1,16 @@
 <script lang="ts">
 	export let type: 'button' | 'submit' | 'reset' = 'button';
+	export let btnSize: 'btn-sm' | 'btn-md' | 'btn-lg' = 'btn-sm';
 </script>
 
-<button {type} class="btn btn-sm bg-gradient-to-br variant-gradient-primary-secondary">
+<button {type} class="btn bg-gradient-to-br variant-gradient-primary-secondary {btnSize}">
 	<slot />
 </button>
 
 <style>
 	button {
 		padding: 3px 1.5em;
+		background: linear-gradient(90deg, rgba(255, 239, 239, 0.8) 0%, rgba(254, 236, 218, 0.8));
 		border: 0.5px solid rgba(0, 0, 0, 0.157);
 		position: relative;
 	}
@@ -30,28 +32,28 @@
 	}
 
 	button:hover::before {
-		animation: moveLeft 0.5s ease-in-out infinite alternate;
+		animation: moveLeft 1s ease-in-out infinite alternate;
 	}
 
 	button:hover::after {
-		animation: moveRight 0.5s ease-in-out infinite alternate;
+		animation: moveRight 1s ease-in-out infinite alternate;
 	}
 
 	@keyframes moveLeft {
 		0% {
-			transform: translateX(-30%) scale(1);
+			transform: translateX(-30%);
 		}
 		100% {
-			transform: translateX(0) scale(1.1);
+			transform: translateX(20%);
 		}
 	}
 
 	@keyframes moveRight {
 		0% {
-			transform: translateX(30%) scale(1);
+			transform: translateX(30%);
 		}
 		100% {
-			transform: translateX(0) scale(1.1);
+			transform: translateX(-20%);
 		}
 	}
 </style>
