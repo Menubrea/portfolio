@@ -10,8 +10,7 @@
 <style>
 	button {
 		padding: 3px 1.5em;
-		background: linear-gradient(90deg, rgba(255, 239, 239, 0.8) 0%, rgba(254, 236, 218, 0.8));
-		border: 0.5px solid rgba(0, 0, 0, 0.157);
+		box-shadow: 0 0 0.5em rgba(255, 255, 255, 0.1);
 		position: relative;
 	}
 

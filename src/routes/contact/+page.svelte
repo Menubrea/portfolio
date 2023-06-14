@@ -41,7 +41,7 @@
 			<label class="label">
 				<span>Email</span>
 				<input
-					class="input"
+					class="input w-full"
 					type="email"
 					required
 					title="Please provide your email so I can contact you back"
@@ -52,7 +52,7 @@
 			<label class="label">
 				<span>Name</span>
 				<input
-					class="input"
+					class="input w-full"
 					name="name"
 					required
 					minlength="1"
@@ -75,7 +75,7 @@
 			/>
 		</label>
 		<div class="mx-auto w-fit mt-5">
-			<ButtonAlt type="submit">Send</ButtonAlt>
+			<ButtonAlt type="submit">Send message</ButtonAlt>
 		</div>
 	</form>
 </div>

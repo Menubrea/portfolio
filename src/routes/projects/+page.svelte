@@ -15,7 +15,7 @@
 
 <div class="h-full p-2 flex flex-col justify-center items-center overflow-hidden sm:m-2 md:mt-0">
 	<h1
-		class="h2 md:pb-5 mb-5 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
+		class="h2 md:pb-2 mb-5 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
 	>
 		Projects
 	</h1>
