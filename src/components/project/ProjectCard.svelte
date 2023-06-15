@@ -5,7 +5,7 @@
 </script>
 
 <article class="relative pb-2 pb-4">
-	<div class="flex gap-2 justify-center py-2 w-full variant-filled-surface">
+	<div class="flex justify-evenly w-full variant-filled-surface">
 		{#each project.tech as tech}
 			<i class={tech} />
 		{/each}
@@ -37,17 +37,16 @@
 		font-size: 0.7rem;
 	}
 
+	img {
+		border-bottom: 3px solid black;
+	}
+
 	div > i {
-		font-size: 1.2rem;
+		font-size: 1.5rem;
+		padding: 0.5rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 2.2rem;
-		width: 2.2rem;
-		border-radius: 3px;
-		backdrop-filter: blur(0.5em);
-		background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(255, 210, 203));
-		border: 0.5px solid rgba(29, 29, 29, 0.801);
 	}
 
 	article {

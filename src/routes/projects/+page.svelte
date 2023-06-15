@@ -24,6 +24,10 @@
 			<ProjectCard {project} />
 		{/each}
 	</section>
+
+	<!-- <section class="container mt-5">
+		<h2 class="h4"> efforts</h2>
+	</section> -->
 </div>
 
 <style>

@@ -3,20 +3,20 @@
 	export let btnSize: 'btn-sm' | 'btn-md' | 'btn-lg' = 'btn-sm';
 </script>
 
-<button {type} class="btn bg-gradient-to-br variant-gradient-primary-secondary {btnSize}">
+<button {type} class="btn {btnSize}">
 	<slot />
 </button>
 
 <style>
 	button {
 		padding: 3px 1.5em;
-		box-shadow: 0 0 0.5em rgba(255, 255, 255, 0.1);
+		box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
 		position: relative;
 	}
 
 	button::before,
 	button::after {
-		content: '[';
+		content: '{';
 		left: 0.5rem;
 		width: fit-content;
 		position: absolute;
@@ -26,7 +26,7 @@
 	button::after {
 		left: auto;
 		right: 0.5rem;
-		content: ']';
+		content: '}';
 		transform: translateX(30%);
 	}
 
