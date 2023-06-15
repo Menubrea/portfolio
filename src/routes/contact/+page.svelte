@@ -13,9 +13,9 @@
 	/>
 </svelte:head>
 
-<div class="h-full flex items-center justify-center">
+<div class="h-full grid grid-cols-3 items-center justify-center contact">
 	<form
-		class="p-5 rounded max-w-lg"
+		class="p-5 rounded max-w-lg col-span-3 md:col-span-2 mx-auto"
 		name="contactMe"
 		method="POST"
 		data-netlify="true"
@@ -87,6 +87,13 @@
 		animation: fade 1s ease-in-out;
 		opacity: 0;
 		animation-fill-mode: forwards;
+	}
+
+	.contact {
+		background-image: url('https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0yMTNiYXRjaDMtbmluZy10d2l0dGVycG9zdC0wMS5qcGc.jpg');
+		background-size: cover;
+		background-position: center;
+		animation: fade 0.2s ease-in-out;
 	}
 
 	input,
