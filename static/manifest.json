@@ -1,0 +1,20 @@
+{
+	"name": "Menubrea.dev - Web Developer",
+	"short_name": "Menubrea.dev",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#e75480",
+	"theme_color": "#fff",
+	"icons": [
+		{
+			"src": "icon192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "icon512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
