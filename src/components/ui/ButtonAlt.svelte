@@ -1,7 +1,7 @@
 <button
 	><span
 		class="bg-gradient-to-br from-pink-400 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
-		><slot /><i class="fa-solid fa-arrow-right ml-5" /></span
+		><slot /><i class="fa fa-arrow-right ml-5" /></span
 	></button
 >
 

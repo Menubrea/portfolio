@@ -6,11 +6,11 @@ export type technologies = {
 export const technologiesData: technologies[] = [
 	{
 		tech: 'HTML5',
-		icon: 'fab fa-html5'
+		icon: 'devicon-html5-plain'
 	},
 	{
 		tech: 'CSS3',
-		icon: 'fab fa-css3-alt'
+		icon: 'devicon-css3-plain'
 	},
 	{
 		tech: 'Sass',
@@ -18,23 +18,27 @@ export const technologiesData: technologies[] = [
 	},
 	{
 		tech: 'JavaScript',
-		icon: 'fab fa-js'
+		icon: 'devicon-javascript-plain'
 	},
 	{
 		tech: 'TypeScript',
-		icon: 'fab fa-js'
+		icon: 'devicon-typescript-plain'
 	},
 	{
 		tech: 'React',
-		icon: 'fab fa-react'
+		icon: 'devicon-react-original'
 	},
 	{
 		tech: 'Svelte',
-		icon: 'fas fa-code'
+		icon: 'devicon-svelte-plain'
 	},
 	{
 		tech: 'Node.js',
-		icon: 'fab fa-node'
+		icon: 'devicon-nodejs-plain'
+	},
+	{
+		tech: 'Adobe Xd',
+		icon: 'devicon-xd-plain'
 	},
 	{
 		tech: 'Tailwind CSS',
@@ -42,7 +46,7 @@ export const technologiesData: technologies[] = [
 	},
 	{
 		tech: 'Bootstrap',
-		icon: 'fab fa-bootstrap'
+		icon: 'devicon-bootstrap-plain'
 	},
 	{
 		tech: 'Material UI',

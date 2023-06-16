@@ -24,7 +24,7 @@
 	</section>
 	<footer class=" mx-auto w-fit">
 		<a target="_blank" href={project.url}
-			><Button>Demo <i class="fa-solid fa-square-up-right text-sm ml-2" /></Button></a
+			><Button>Demo <i class="fa fa-square-up-right text-sm ml-2" /></Button></a
 		>
 		<a target="_blank" href={project.github}
 			><Button>Code <i class="devicon-github-original ml-2 text-sm" /></Button></a
