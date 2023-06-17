@@ -1,7 +1,22 @@
-<script>
-	// @ts-nocheck
-
+<script lang="ts">
 	import { ButtonAlt } from '../../lib/components/ui';
+
+	let name: string | null = null;
+	let email: string | null = null;
+	let message: string | null = null;
+
+	let formValidated: boolean = false;
+	$: formValidated = !!name && !!email && !!message;
+
+	interface ExtendedFormProps {
+		'netlify-honeypot'?: string;
+		'data-netlify'?: string;
+	}
+
+	export let customProps: ExtendedFormProps = {
+		'netlify-honeypot': 'bot-field',
+		'data-netlify': 'true'
+	};
 </script>
 
 <svelte:head>
@@ -15,11 +30,11 @@
 
 <div class="h-full grid grid-cols-3 justify-center contact">
 	<form
+		{...customProps}
 		class="p-5 max-w-lg col-span-3 md:col-span-2 mx-auto h-full flex flex-col justify-center"
 		name="contactMe"
 		method="POST"
 		data-netlify="true"
-		netlify-honeypot="bot-field"
 		action="/success"
 	>
 		<input type="hidden" name="form-name" value="contactMe" />
@@ -32,15 +47,16 @@
 			Send me a message and I'll get back to you as soon as possible. It's important you add a valid
 			email to reach you, as I will use that to contact you back.
 		</p>
-		<p class="hidden">
+		<div class="hidden">
 			<label>
 				Don’t fill this out if you’re human: <input name="bot-field" />
 			</label>
-		</p>
+		</div>
 		<div class="flex gap-1 w-full">
 			<label class="label w-full">
 				<span>Email</span>
 				<input
+					bind:value={email}
 					class="input"
 					type="email"
 					required
@@ -52,6 +68,7 @@
 			<label class="label w-full">
 				<span>Name</span>
 				<input
+					bind:value={name}
 					class="input"
 					name="name"
 					required
@@ -65,6 +82,7 @@
 		<label class="label mt-3">
 			<span>Message</span>
 			<textarea
+				bind:value={message}
 				class="textarea"
 				name="message"
 				title="The content of your message"
@@ -75,7 +93,7 @@
 			/>
 		</label>
 		<div class="mx-auto w-fit mt-5">
-			<ButtonAlt type="submit">Send message</ButtonAlt>
+			<ButtonAlt disabled={!formValidated} type="submit">Send message</ButtonAlt>
 		</div>
 	</form>
 </div>
@@ -84,8 +102,17 @@
 	form {
 		inset: 0 auto;
 		backdrop-filter: blur(20px);
-		animation: fade 1s ease-in-out;
-		opacity: 0;
+		overflow: hidden;
+	}
+
+	form > h1 {
+		animation: slideFromTop 0.5s ease-in-out;
+		animation-fill-mode: forwards;
+	}
+
+	form > p {
+		animation: slideFromLeft 0.7s ease-in-out;
+		transform: translateX(-100%);
 		animation-fill-mode: forwards;
 	}
 
@@ -93,7 +120,6 @@
 		background-image: url('https://images.rawpixel.com/image_1300/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjUwMS13YW4tNDAtaGFsZnRvbmViZ18xLmpwZw.jpg');
 		background-size: cover;
 		background-position: center;
-		animation: fade 0.2s ease-in-out;
 	}
 
 	input,
@@ -101,12 +127,21 @@
 		border: 1px solid rgba(0, 0, 0, 0.1);
 	}
 
-	@keyframes fade {
+	@keyframes slideFromTop {
 		from {
-			opacity: 0;
+			transform: translateY(-40%);
 		}
 		to {
-			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes slideFromLeft {
+		from {
+			transform: translateX(-100%);
+		}
+		to {
+			transform: translateX(0);
 		}
 	}
 </style>

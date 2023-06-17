@@ -1,4 +1,9 @@
-<button class="border-2 border-pink-500 hover:border-pink-700"
+<script lang="ts">
+	export let disabled: boolean = false;
+	export let type: 'button' | 'submit' | 'reset' = 'button';
+</script>
+
+<button {disabled} {type} class="border-2 border-pink-500 hover:border-pink-700"
 	><span
 		class="bg-gradient-to-br from-pink-500 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
 		><slot /><i class="fa fa-arrow-right ml-5" /></span
