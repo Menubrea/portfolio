@@ -1,5 +1,8 @@
-import { build, files, prerendered, version } from '$service-worker';
+import { build, files, prerendered } from '$service-worker';
 import { precacheAndRoute } from 'workbox-precaching';
+import packageJson from '../package.json';
+
+const version = packageJson.version;
 
 const precache_list = [...build, ...files, ...prerendered].map((file) => ({
 	url: file,
