@@ -31,7 +31,9 @@
 	<div class="flex flex-col items-center justify-center text-center py-2">
 		<div class="flex items-center gap-1">
 			<span class="text-sm text-gray-600">&copy; 2023 by</span>
-			<a href="https://menubrea.github" class="text-sm font-bold text-gray-800">{name}</a>
+			<a target="_blank" href="https://github.com/menubrea" class="text-sm font-bold text-gray-800"
+				>{name}</a
+			>
 			<div class="hidden sm:flex gap-2 items-center">
 				<span class="text-sm">| Built with love using:</span>
 				{#each links as link}
@@ -39,7 +41,7 @@
 						href={link.href}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-sm text-gray-800"
+						class=" text-sm text-gray-800"
 						><i class={link.icon} /><span class="ml-1">{link.text}</span></a
 					>
 				{/each}

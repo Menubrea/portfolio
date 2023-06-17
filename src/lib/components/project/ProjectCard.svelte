@@ -4,41 +4,39 @@
 	export let project: Project;
 </script>
 
-<article class="relative pb-2 pb-4">
+<article class="relative">
 	<div class="flex justify-center w-full variant-filled-surface">
 		{#each project.tech as tech}
 			<i class={tech} />
 		{/each}
 	</div>
-	<div class="flex overflow-hidden">
-		<img src={project.images[0]} alt={`${project.name} image`} />
-	</div>
+	<div class="md:grid grid-cols-3">
+		<img class="col-span-1" src={project.images[0]} alt={`${project.name} image`} />
 
-	<section class="card-content p-4">
-		<h2
-			class="w-fit mx-auto md:h4 h3 mb-2 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
-		>
-			{project.name}
-		</h2>
-		<p class="px-4 md:text-base">{project.description}</p>
-	</section>
-	<footer class=" mx-auto w-fit">
-		<a target="_blank" href={project.url}
-			><Button>Demo <i class="fa fa-square-up-right text-sm ml-2" /></Button></a
-		>
-		<a target="_blank" href={project.github}
-			><Button>Code <i class="devicon-github-original ml-2 text-sm" /></Button></a
-		>
-	</footer>
+		<div class="col-span-2 p-5 md:mt-4 mt-0">
+			<section class="card-content">
+				<h2
+					class="w-fit mx-auto md:h4 h3 mb-2 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
+				>
+					{project.name}
+				</h2>
+				<p class="px-4 md:text-base">{project.description}</p>
+			</section>
+			<footer class=" mx-auto w-fit mt-2">
+				<a target="_blank" href={project.url}
+					><Button>Demo <i class="fa fa-square-up-right text-sm ml-2" /></Button></a
+				>
+				<a target="_blank" href={project.github}
+					><Button>Code <i class="devicon-github-original ml-2 text-sm" /></Button></a
+				>
+			</footer>
+		</div>
+	</div>
 </article>
 
 <style>
 	.badge {
 		font-size: 0.7rem;
-	}
-
-	img {
-		border-bottom: 3px solid black;
 	}
 
 	div > i {

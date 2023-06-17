@@ -4,7 +4,7 @@ import holiVenue from '../../assets/project-images/Holidaze/holiVenue.webp';
 import venderFront from '../../assets/project-images/Vender/venderFront.webp';
 import venderProduct from '../../assets/project-images/Vender/venderProduct.webp';
 
-import remoteProduct from '../../assets/project-images/Remote/remoteProduct.webp';
+import remoteProduct from '../../assets/project-images/Remote/remoteFront.webp';
 import remoteCart from '../../assets/project-images/Remote/remoteCart.webp';
 
 export type Project = {

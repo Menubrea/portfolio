@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { ButtonAlt } from '../../lib/components/ui';
 	import { ProjectCard } from '../../lib/components/project';
 	import { projects } from '../../lib/constants/projects';
 </script>
@@ -19,7 +20,7 @@
 	>
 		Featured projects
 	</h1>
-	<section>
+	<section class="flex flex-col gap-2">
 		{#each projects as project}
 			<ProjectCard {project} />
 		{/each}
@@ -27,12 +28,6 @@
 </div>
 
 <style>
-	section {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 1rem;
-	}
-
 	h1 {
 		animation: fadeIn 1s ease-in-out;
 	}
