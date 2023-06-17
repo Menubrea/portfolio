@@ -1,6 +1,6 @@
-<button
+<button class="border-2 border-pink-500 hover:border-pink-700"
 	><span
-		class="bg-gradient-to-br from-pink-400 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
+		class="bg-gradient-to-br from-pink-500 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
 		><slot /><i class="fa fa-arrow-right ml-5" /></span
 	></button
 >
@@ -26,8 +26,7 @@
 		top: 0;
 		height: 100%;
 		width: 100%;
-		background-color: rgb(255, 226, 226);
-		z-index: -1;
+		background-color: rgba(159, 30, 92, 0.168);
 		transform: translateX(-90%);
 		transition: transform 0.6s ease-in-out;
 	}

@@ -1,5 +1,5 @@
 <script>
-	import { ButtonAlt } from '../components/ui';
+	import { ButtonAlt } from '../lib/components/ui';
 </script>
 
 <svelte:head>
@@ -14,10 +14,12 @@
 <div class="flex h-full items-center justify-center relative overflow-hidden">
 	<div class="p-2 welcomeMessage">
 		<h1 class="md:h1 h3">
-			Truls Haakenstad | <span
-				class="bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
+			Truls Haakenstad | <a
+				href="https://github.com/menubrea"
+				target="_blank"
+				class="bg-gradient-to-br from-pink-500 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
 				><i class="fa fa-github" aria-hidden="true" />
-				Menubrea</span
+				Menubrea</a
 			>
 		</h1>
 		<p class="text-md md:text-2xl mt-2 text-center">

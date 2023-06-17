@@ -3,13 +3,14 @@
 	export let btnSize: 'btn-sm' | 'btn-md' | 'btn-lg' = 'btn-sm';
 </script>
 
-<button {type} class="btn {btnSize}">
+<button {type} class="btn border border-secondary-500 {btnSize}">
 	<slot />
 </button>
 
 <style>
 	button {
 		padding: 3px 1.5em;
+		border-radius: 0.1rem;
 		box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
 		position: relative;
 	}

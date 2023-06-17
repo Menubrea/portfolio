@@ -5,7 +5,7 @@
 </script>
 
 <article class="relative pb-2 pb-4">
-	<div class="flex justify-evenly w-full variant-filled-surface">
+	<div class="flex justify-center w-full variant-filled-surface">
 		{#each project.tech as tech}
 			<i class={tech} />
 		{/each}
@@ -16,11 +16,11 @@
 
 	<section class="card-content p-4">
 		<h2
-			class="w-fit mx-auto h4 mb-2 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
+			class="w-fit mx-auto md:h4 h3 mb-2 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
 		>
 			{project.name}
 		</h2>
-		<p class="px-4 text-sm md:text-base">{project.description}</p>
+		<p class="px-4 md:text-base">{project.description}</p>
 	</section>
 	<footer class=" mx-auto w-fit">
 		<a target="_blank" href={project.url}

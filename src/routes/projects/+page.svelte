@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { ProjectCard } from '../../components/project';
-	import { projects } from '../../constants/projects';
+	import { ProjectCard } from '../../lib/components/project';
+	import { projects } from '../../lib/constants/projects';
 </script>
 
 <svelte:head>
@@ -15,19 +15,15 @@
 
 <div class="h-full p-2 flex flex-col justify-center items-center overflow-hidden sm:m-2 md:mt-0">
 	<h1
-		class="h2 md:pb-2 mb-5 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
+		class="h2 md:pb-2 mb-2 bg-gradient-to-br from-pink-500 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
 	>
-		Projects
+		Featured projects
 	</h1>
 	<section>
 		{#each projects as project}
 			<ProjectCard {project} />
 		{/each}
 	</section>
-
-	<!-- <section class="container mt-5">
-		<h2 class="h4"> efforts</h2>
-	</section> -->
 </div>
 
 <style>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { AppShell } from '@skeletonlabs/skeleton';
-	import { Navbar } from '../components/ui';
+	import { Footer, Navbar } from '../lib/components/ui';
 	import { page } from '$app/stores';
 
 	import '../theme.postcss';
@@ -16,4 +16,8 @@
 	</svelte:fragment>
 
 	<slot />
+
+	<svelte:fragment slot="footer">
+		<Footer />
+	</svelte:fragment>
 </AppShell>

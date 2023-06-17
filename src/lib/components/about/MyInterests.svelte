@@ -8,7 +8,7 @@
 	<h2 class="h4">Interested in</h2>
 	<ul class="flex flex-wrap gap-1">
 		{#each myInterests as obj}
-			<li class="badge">
+			<li class="badge bg-tertiary-100">
 				{obj.interest}
 			</li>
 		{/each}
@@ -17,7 +17,6 @@
 
 <style>
 	li {
-		background: linear-gradient(90deg, rgba(255, 239, 239, 0.4) 0%, rgba(254, 236, 218, 0.4));
 		font-weight: 500;
 	}
 </style>

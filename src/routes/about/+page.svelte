@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Development, Profile } from '../../components/about';
+	import { Development, Profile } from '../../lib/components/about';
 </script>
 
 <div class="flex flex-col h-full items-center justify-center relative overflow-hidden">
