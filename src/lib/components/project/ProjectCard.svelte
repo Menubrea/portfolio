@@ -11,9 +11,11 @@
 		{/each}
 	</div>
 	<div class="md:grid grid-cols-3">
-		<img class="col-span-1" src={project.images[0]} alt={`${project.name} image`} />
+		<div class="col-span-1 py-2 pl-2 rounded-lg">
+			<img class="rounded-lg" src={project.images[0]} alt={`${project.name} image`} />
+		</div>
 
-		<div class="col-span-2 p-5 md:mt-4 mt-0">
+		<div class="col-span-2 p-4">
 			<section class="card-content">
 				<h2
 					class="w-fit mx-auto md:h4 h3 mb-2 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
@@ -53,6 +55,11 @@
 		opacity: 0;
 		animation-fill-mode: forwards;
 		box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+		cursor: pointer;
+	}
+
+	article:hover {
+		box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
 	}
 
 	article:nth-child(2) {

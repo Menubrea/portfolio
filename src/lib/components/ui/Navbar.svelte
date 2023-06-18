@@ -7,7 +7,7 @@
 		<!-- <img class="w-32" src={logo} alt="website logo" /> -->
 
 		<h1
-			class="logo h5 bg-gradient-to-br from-pink-500 to-pink-900 bg-clip-text text-transparent box-decoration-clone flex items-center gap-1"
+			class="h5 bg-gradient-to-br from-pink-500 to-pink-900 bg-clip-text text-transparent box-decoration-clone flex items-center gap-1"
 		>
 			<i class="devicon-devicon-plain" />Menubrea.dev
 		</h1>

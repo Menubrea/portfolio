@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { ButtonAlt } from '../../lib/components/ui';
-	import { ProjectCard } from '../../lib/components/project';
-	import { projects } from '../../lib/constants/projects';
+	import { ProjectsUI } from '$lib/components/project';
 </script>
 
 <svelte:head>
@@ -14,42 +12,8 @@
 	<meta property="og:title" content="Projects" />
 </svelte:head>
 
-<div class="h-full p-2 flex flex-col justify-center items-center overflow-hidden sm:m-2 md:mt-0">
-	<h1
-		class="h2 md:pb-2 mb-2 bg-gradient-to-br from-pink-500 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
-	>
-		Featured projects
-	</h1>
-	<section class="flex flex-col gap-2">
-		{#each projects as project}
-			<ProjectCard {project} />
-		{/each}
-	</section>
+<div class="p-2 flex flex-col container max-w-3xl mx-auto projects-main">
+	<div class=" gap-2">
+		<ProjectsUI />
+	</div>
 </div>
-
-<style>
-	h1 {
-		animation: fadeIn 1s ease-in-out;
-	}
-
-	@media (min-width: 1000px) {
-		section {
-			max-width: 1000px;
-		}
-	}
-
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
-
-	@media (max-width: 600px) {
-		section {
-			gap: 2rem;
-		}
-	}
-</style>
