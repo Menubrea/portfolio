@@ -1,7 +1,19 @@
 <script lang="ts">
+	import type { ModalSettings } from '@skeletonlabs/skeleton';
+	import { modalStore } from '@skeletonlabs/skeleton';
 	import type { Project } from '../../constants/projects';
 	import { Button } from '../ui';
 	export let project: Project;
+
+	const modal: ModalSettings = {
+		type: 'alert',
+		title: project?.name,
+		body: project?.description
+	};
+
+	const handleModal = () => {
+		modalStore.trigger(modal);
+	};
 </script>
 
 <article class="relative">
@@ -11,32 +23,51 @@
 		{/each}
 	</div>
 	<div class="md:grid grid-cols-3">
-		<div class="col-span-1 py-2 pl-2 rounded-lg">
-			<img class="rounded-lg" src={project.images[0]} alt={`${project.name} image`} />
+		<div class="col-span-1">
+			<img src={project.image} alt={`${project.name} image`} />
 		</div>
 
-		<div class="col-span-2 p-4">
-			<section class="card-content">
+		<div class="col-span-2 flex">
+			<section class="card-content px-5">
 				<h2
-					class="w-fit mx-auto md:h4 h3 mb-2 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
+					class=" md:h4 h3 bg-gradient-to-br from-pink-300 to-pink-900 bg-clip-text text-transparent box-decoration-clone mt-4"
 				>
 					{project.name}
 				</h2>
-				<p class="px-4 md:text-base">{project.description}</p>
+				<p class=" md:text-base">{project.description}</p>
 			</section>
-			<footer class=" mx-auto w-fit mt-2">
-				<a target="_blank" href={project.url}
-					><Button>Demo <i class="fa fa-square-up-right text-sm ml-2" /></Button></a
-				>
-				<a target="_blank" href={project.github}
-					><Button>Code <i class="devicon-github-original ml-2 text-sm" /></Button></a
-				>
+			<footer class="flex flex-col items-center">
+				<a
+					class="flex flex-col items-center justify-center bg-tertiary-100 w-14 h-14 rounded-tl"
+					target="_blank"
+					href={project.url}
+					><i class="fa fa-square-up-right text-sm" />Demo
+				</a>
+				<a
+					class="flex flex-col items-center justify-center bg-tertiary-300 w-14 h-14 rounded-bl"
+					target="_blank"
+					href={project.github}
+					><i class="devicon-github-original text-sm" />Code
+				</a>
 			</footer>
 		</div>
 	</div>
+	<!-- <button class="bg-tertiary-300 px-2 p-1" on:click={handleModal} on:keypress={handleModal}
+		>Read More</button
+	> -->
 </article>
 
 <style>
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	a:hover {
+		opacity: 0.6;
+	}
+
 	.badge {
 		font-size: 0.7rem;
 	}
@@ -55,11 +86,6 @@
 		opacity: 0;
 		animation-fill-mode: forwards;
 		box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
-		cursor: pointer;
-	}
-
-	article:hover {
-		box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
 	}
 
 	article:nth-child(2) {

@@ -15,10 +15,11 @@ import remoteFront from '../../assets/project-images/Remote/remoteFront.webp';
 const placeholder: string = 'https://via.placeholder.com/720x480.png';
 
 export type Project = {
+	id: string;
 	name: string;
 	shortDescription: string;
 	description: string;
-	images: string[];
+	image: string;
 	url: string;
 	github: string;
 	tech: string[];

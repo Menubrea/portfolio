@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { ProjectCard } from '.';
-	import { projects } from '../../constants/projects';
+	import type { Project } from '../../constants/projects';
+
+	export let projects: Project[];
+	export let loading: boolean = true;
 
 	interface Searches {
 		name: string;
@@ -22,51 +25,53 @@
 	);
 </script>
 
-<div class="flex justify-between items-center p-2 gap-3 border-2 border-pink-500 mb-2 rounded">
-	<h1
-		class="h3 bg-gradient-to-br from-pink-500 to-pink-900 bg-clip-text text-transparent box-decoration-clone"
-	>
-		Projects
-	</h1>
-	<div class="flex w-full">
-		<input
-			type="text"
-			placeholder="Search technology, e.g React etc."
-			class="input"
-			bind:value={searchValue}
-			aria-label="Search projects"
-		/>
-		{#if searchValue}
-			<button
-				class="btn btn-primary"
-				on:click={() => {
-					searchValue = '';
-				}}><i class="fa fa-close" /></button
-			>
-		{/if}
+<div class=" p-2 gap-3 mb-2 rounded border-2 border-tertiary-500 h-fit">
+	<div class="flex gap-2 items-center">
+		<h1 class="h3">Projects</h1>
+		<div class="flex w-full">
+			<input
+				type="text"
+				placeholder="Search technology, e.g React etc."
+				class="input"
+				bind:value={searchValue}
+				aria-label="Search projects"
+			/>
+			{#if searchValue}
+				<button
+					class="btn btn-primary"
+					on:click={() => {
+						searchValue = '';
+					}}><i class="fa fa-close" /></button
+				>
+			{/if}
+		</div>
 	</div>
 </div>
-<section class="flex flex-col gap-2">
-	{#if filteredProjects.length === 0}
-		<p class="text-center mt-2">No results found, try one of these options instead</p>
-		<ul class="mx-auto max-w-lg flex gap-2 flex-wrap">
-			{#each popularSearches as search}
-				<li class="bg-primary-500 rounded-full w-8 h-8 flex items-center justify-center">
-					<button
-						on:click={() => (searchValue = search.name)}
-						on:keypress={() => (searchValue = search.name)}
-					>
-						<i class="text-lg {search.name}" />
-					</button>
-				</li>
+{#if loading}
+	<div class="h-96 items-center justify-center flex flex-col">Loading</div>
+{:else}
+	<section class="flex flex-col gap-5">
+		{#if filteredProjects.length === 0}
+			<p class="text-center mt-2">No results found, try one of these options instead</p>
+			<ul class="mx-auto max-w-lg flex gap-2 flex-wrap">
+				{#each popularSearches as search}
+					<li class="bg-primary-500 rounded-full w-8 h-8 flex items-center justify-center">
+						<button
+							on:click={() => (searchValue = search.name)}
+							on:keypress={() => (searchValue = search.name)}
+						>
+							<i class="text-lg {search.name}" />
+						</button>
+					</li>
+				{/each}
+			</ul>
+		{:else}
+			{#each filteredProjects as project}
+				<ProjectCard {project} />
 			{/each}
-		</ul>
-	{:else}
-		{#each filteredProjects as project}
-			<ProjectCard {project} />
-		{/each}
-	{/if}
-</section>
+		{/if}
+	</section>
+{/if}
 
 <style>
 	li {

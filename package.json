@@ -45,5 +45,8 @@
 		"vitest": "^0.25.3",
 		"workbox-precaching": "^7.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"svelte-routing": "^1.10.0"
+	}
 }
