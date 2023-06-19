@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { AppShell } from '@skeletonlabs/skeleton';
+	import { AppShell, Modal } from '@skeletonlabs/skeleton';
 	import { Footer, Navbar } from '../lib/components/ui';
 	import { page } from '$app/stores';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
-
 	import '../theme.postcss';
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.postcss';
@@ -14,7 +13,7 @@
 	let { supabase, session } = data;
 	$: ({ supabase, session } = data);
 
-	onMount(() => {
+	onMount(async () => {
 		const {
 			data: { subscription }
 		} = supabase.auth.onAuthStateChange((event, _session) => {
@@ -26,6 +25,8 @@
 		return () => subscription.unsubscribe();
 	});
 </script>
+
+<Modal />
 
 <AppShell>
 	<svelte:fragment slot="header">
