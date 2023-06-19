@@ -2,15 +2,34 @@
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import { Footer, Navbar } from '../lib/components/ui';
 	import { page } from '$app/stores';
+	import { invalidate } from '$app/navigation';
+	import { onMount } from 'svelte';
 
 	import '../theme.postcss';
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.postcss';
+
+	export let data;
+
+	let { supabase, session } = data;
+	$: ({ supabase, session } = data);
+
+	onMount(() => {
+		const {
+			data: { subscription }
+		} = supabase.auth.onAuthStateChange((event, _session) => {
+			if (_session?.expires_at !== session?.expires_at) {
+				invalidate('supabase:auth');
+			}
+		});
+
+		return () => subscription.unsubscribe();
+	});
 </script>
 
 <AppShell>
 	<svelte:fragment slot="header">
-		{#if $page.url.pathname !== '/'}
+		{#if $page.url.pathname !== '/' && $page.url.pathname !== '/auth' && $page.url.pathname !== '/admin'}
 			<Navbar />
 		{/if}
 	</svelte:fragment>
@@ -18,6 +37,8 @@
 	<slot />
 
 	<svelte:fragment slot="footer">
-		<Footer />
+		{#if $page.url.pathname !== '/auth' && $page.url.pathname !== '/admin'}
+			<Footer />
+		{/if}
 	</svelte:fragment>
 </AppShell>
